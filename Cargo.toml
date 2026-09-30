@@ -1,0 +1,47 @@
+[package]
+name = "multitable"
+version = "0.1.0"
+edition = "2021"
+authors = ["Maksym Petkus"]
+
+[lib]
+name = "multitable"
+path = "src/lib.rs"
+# Otherwise `cargo bench` builds and runs the unit tests in the bench profile first.
+bench = false
+
+[features]
+# Exactly one variant feature: picking another needs `--no-default-features --features <variant>`,
+# since features are additive and `agile` would otherwise stay on and trip the exclusivity check.
+default = ["agile"]
+nightly = []
+jema = ["tikv-jemallocator"]
+mima = ["mimalloc"]
+profiling = []
+agile = []
+powers-of-2 = []
+first-power = []
+
+[dependencies]
+ahash = "0.8.12"
+deepsize = "0.2.0"
+tikv-jemallocator = {version = "0.5", optional = true}
+mimalloc = {version = "0.1", optional = true}
+foldhash = "0.2.0"
+rustc-hash = "2.1.1"
+seq-macro = "0.3"
+rand = "0.10"
+blake2 = "0.10.6"
+
+[dev-dependencies]
+criterion = "0.5.1"
+hashbrown = {version = "0.16.1", features = ["inline-more"]}
+rand_chacha = "0.10"
+
+[[bench]]
+name = "comparison"
+harness = false
+
+[[example]]
+name = "perfect"
+required-features = ["agile"]
