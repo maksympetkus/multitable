@@ -11,6 +11,10 @@ share the crate: `MultiTableFiltered`, where a per-slot filter byte
 gates every bucket probe (the default, and the one the paper measures), and
 the filterless plain `MultiTable`.
 
+## Paper
+
+Read the paper at https://arxiv.org/abs/2609.39233
+
 ## Project structure
 
 - `src/lib.rs` is the crate root: the variant-feature checks, the shared
