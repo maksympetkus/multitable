@@ -1,15 +1,14 @@
 ### Disclaimer: this library isn't production-grade, use at your own risk.
 
-# Multitable
+# MultiTable
 
-A cascading multi-level hash table, built to hold a hashbrown-sized key set in
+A cascading multi-level hash table, built to hold a key-value pairs in
 substantially less memory. A key hashes to one bucket per level and settles in
 the first level whose bucket has room, so the table runs at load factors well
 past the point where an open-addressing table has doubled its array; the trade
 is a probe that may touch a few levels instead of one. Two implementations
 share the crate: `MultiTableFiltered`, where a per-slot filter byte
-gates every bucket probe (the default, and the one the paper measures), and
-the filterless plain `MultiTable`.
+gates every bucket probe, and the plain `MultiTable` that achieves load factor 0.9999.
 
 ## Paper
 
@@ -59,7 +58,7 @@ by a shift rather than a multiply.
 
 ## Perfect Table
 
-To run a demonstration of perfect table use:
+To run a demonstration of perfect table (every available slot is filled, and practically all the allocated bytes are filled with the key-value payload) use:
 
 ```bash 
 cargo run --example perfect --release
