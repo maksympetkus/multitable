@@ -10,6 +10,8 @@ is a probe that may touch a few levels instead of one. Two implementations
 share the crate: `MultiTableFiltered`, where a per-slot filter byte
 gates every bucket probe, and the plain `MultiTable` that achieves load factor 0.9999.
 
+<img width="1536" height="1024" alt="1" src="https://github.com/user-attachments/assets/d64436a0-f1a3-4bc3-b546-56801143cae0" />
+
 ## Paper
 
 Read the paper at https://arxiv.org/abs/2609.39233
@@ -58,7 +60,10 @@ by a shift rather than a multiply.
 
 ## Perfect Table
 
-To run a demonstration of perfect table (every available slot is filled, and practically all the allocated bytes are filled with the key-value payload) use:
+Perfect table is when every available slot is filled, i.e., load factor 1, and practically 
+all the allocated bytes are occupied by the key-value payload, as if you'd have a regular array.
+
+To run a demonstration of the "perfect" table use:
 
 ```bash 
 cargo run --example perfect --release
