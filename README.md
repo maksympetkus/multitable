@@ -128,7 +128,7 @@ has to be encoded into a fixed-width array by the caller.
 
 For the benchmarks we use FxHash for both MultiTable and hashbrown, since it one 
 of the cheapest hash functions, which is important to reduce hash performance
-influence over the MultiTable's performance.
+influence over the hash table's performance.
 
 In our tests FxHash was sufficient where keys weren't structured, e.g., pseudorandom keys or sequential keys, but it's not ideal for structured keys, such as `i * 64`, and might lead to premature terminal overflow, for such cases FoldHash performed better without overflows observed.
 
