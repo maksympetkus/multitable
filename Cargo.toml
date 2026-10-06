@@ -2,7 +2,13 @@
 name = "multitable"
 version = "0.1.0"
 edition = "2021"
-authors = ["Maksym Petkus"]
+description = "A cascading multi-level hash table that reaches any physical load factor up to and including one, faster than hashbrown at equal memory"
+license = "MIT"
+authors = ["Maksym Petkus <me@petkus.info>"]
+repository = "https://github.com/maksympetkus/multitable"
+readme = "README.md"
+keywords = ["hash-table", "hashmap", "data-structures", "memory", "simd"]
+categories = ["data-structures", "algorithms"]
 
 [lib]
 name = "multitable"
