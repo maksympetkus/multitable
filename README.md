@@ -14,7 +14,9 @@ gates every bucket probe, and the plain `MultiTable` that achieves load factor 0
 
 ## Paper
 
-Read the paper at https://arxiv.org/abs/2609.39233
+Maksym Petkus, "MultiTable: A Faster Hash Table at any Physical Load Factor up to and Including One", 2026.
+
+https://arxiv.org/abs/2609.39233
 
 ## Project structure
 
@@ -159,3 +161,18 @@ sees the overflow as `InsertError::Full`.
 
 See the paper for the churn management strategies (not implemented).
 
+
+## Citing
+  
+If you use multitable in research, please cite the paper:
+
+    @article{petkus2026multitable,
+      author = {Petkus, Maksym},
+      title  = {{MultiTable}: A Faster Hash Table at any Physical Load Factor up to and Including One},
+      year   = {2026},
+      url = {https://arxiv.org/abs/2609.39233}
+    } 
+
+## License
+  
+Multitable is released under the MIT license; see [LICENSE](LICENSE).
