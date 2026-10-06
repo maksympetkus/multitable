@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "multitable"
+type: software
+authors:
+  - family-names: Petkus
+    given-names: Maksym
+    email: me@petkus.info
+license: MIT
+repository-code: "https://github.com/maksympetkus/multitable/"
+version: 0.1.0
+preferred-citation:
+  type: article
+  title: "MultiTable: A Faster Hash Table at any Physical Load Factor up to and Including One"
+  authors:
+    - family-names: Petkus
+      given-names: Maksym
+  year: 2026
+  url: "https://arxiv.org/abs/2609.39233"
+
